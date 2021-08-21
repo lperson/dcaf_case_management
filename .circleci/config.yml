@@ -42,7 +42,7 @@ jobs:
           key: dcaf_case_management-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      - run: bundle exec rails test test:system
+      - run: bundle exec rails test:all
       - run: brakeman --exit-on-warn .
       - run: bundle exec ruby-audit check
       - run: bundle-audit update; bundle-audit check
