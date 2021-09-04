@@ -29,8 +29,8 @@ jobs:
       - run: sudo gem update --system # Update rubygems
       - restore_cache:
           keys:
-            - dcaf_case_management-{{ checksum "Gemfile.lock" }}
-            - dcaf_case_management-{{ checksum ".circleci/config.yml" }}
+            - dcaf_case_management-v1-{{ checksum "Gemfile.lock" }}
+            - dcaf_case_management-v1-{{ checksum ".circleci/config.yml" }}
       - run: bundle check || bundle install
       - run: yarn install
       - run: NODE_ENV=test bundle exec rails webpacker:compile
