@@ -1,6 +1,8 @@
 # Empty
 version: 2
 
+orbs:
+  browser-tools: circleci/browser-tools@1.1
 jobs:
   build:
     parallelism: 4
